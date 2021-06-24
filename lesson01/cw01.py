@@ -12,6 +12,11 @@ while option != '9':
         name = input('enter the name of purchase\n')
         price = input('enter the price of purchase\n')
         purchase = dict([('name', name), ('price', int(price))])
+        """
+        other ways to create a dictionary
+        purchase = dict(name=name, price=int(price))
+        purchase = {"name": name, "price": int(price)}
+        """
         list.append(purchase)
     elif option == '2':
         print(list)
