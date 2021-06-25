@@ -134,7 +134,7 @@ def decor(func):
     def wrap():
         func()
         str = func()
-        print(str.replace('_', ' '))
+        return str.replace('_', ' ')
 
     return wrap
 
@@ -144,4 +144,4 @@ def pr():
     return 'Hello_boss_!!!'
 
 
-pr()
+print(pr())
