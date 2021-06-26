@@ -26,6 +26,8 @@ print(list_of_st)
 for k, v in list_of_st.items():
     print(f"'{k}' -> {v}")
 
+"""second way of solving is in list_comprehension.py"""
+
 # list comprehension
 #
 # 1)  есть лист:
