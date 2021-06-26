@@ -23,7 +23,7 @@ while i < len(list_of):
     list_of_st[list_of[i]] = list_of.count(list_of[i])
     i += 1
 print(list_of_st)
-for k,v in list_of_st.items():
+for k, v in list_of_st.items():
     print(f"'{k}' -> {v}")
 
 # list comprehension
