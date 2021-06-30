@@ -24,7 +24,8 @@
 #     "arg3": 3,
 # }
 # print(func(1,2,3))
-# print(func(**d)) #func(arg1=1, arg2 = 2, arg3 = 3) ?
+# print(func(*d)) #func(arg1, arg2, arg3) ?
+# print(func(**d)) #func(1, 2, 3) ?
 
 #####################################################################################
 
@@ -133,7 +134,7 @@ from typing import List, Tuple, Optional, Union, Callable
 # user = User()
 # user2 = User()
 # User.count = 100
-# print(User._User__count)
+# print(User._User__count)  #how to get private variable in Class
 # print(user2.__count)
 
 
