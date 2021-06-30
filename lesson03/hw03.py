@@ -31,8 +31,8 @@ class Prince:
         self.age = age
         self.shoes = shoes
 
-    def find_cinderella(self, list_cinds: list[Cinderella]) -> str:
-        for c in list_cinds:
+    def find_cinderella(self, list_cs: list[Cinderella]) -> str:
+        for c in list_cs:
             if c.foot == self.shoes:
                 return c.name
 
@@ -49,5 +49,5 @@ cinderellas.append(cindi2)
 cinderellas.append(cindi3)
 cinderellas.append(cindi4)
 cinderellas.append(cindi5)
-prince1 = Prince('petya', 12, 36)
+prince1 = Prince('Taras', 12, 36)
 print(prince1.find_cinderella(cinderellas))
