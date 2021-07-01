@@ -105,5 +105,21 @@ print(new_str.count('1'))
     [1, 3, ['Hello, 'World', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'World', 9, 6, 1, 'oops', 9]
     flat використовувати заборонено."""
 
+list_of_lists = [1, 3, ['Hello', 'World', [9, 6, 1]], ['oops'], 9]
+
+
+def flatter(l: list, l2: list = []):
+    for el in l:
+        if type(el) != list:
+            l2.append(el)
+        if type(el) == list:
+            flatter(el)
+    return l2
+
+
+print(flatter(list_of_lists))  # не знаю як зробити щоб не створювати глобальну змінну
+
 """ Знайти найбільший елемент в масиві за допомогою reduce
     [1, 6, 9, 0, 17, 88, 4, 7] -> 88 """
+
+
