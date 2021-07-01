@@ -1,15 +1,47 @@
 """ Create функцию которая принимает число и возвращает текст как в примере:
-   3275  — > "3000 + 200 + 70 +5"""
+   3275  — > "3000 + 200 + 70 +5" """
 
 
+def func1(num: int) -> str:
+    num = str(num)
+    length = len(num)
+    list_of_num = []
+    i = 0
+    while i < len(num):
+        list_of_num.append(num[i] + '0' * (length - 1))
+        length -= 1
+        i += 1
+    return '+'.join(list_of_num)
+
+
+print(func1(121313))
 """ Дан массив целых чисел, найдите тот, который встречается нечетное количество раз.
     Всегда будет только одно целое число, которое встречается нечетное количество раз
     [1, 2, 3, 4, 5, 2, 4, 1, 3] -> 5 """
+
+list_of_n = [1, 2, 3, 4, 5, 2, 4, 1, 3]
+
+odd_num: int = 0
+for el in list_of_n:
+    if list_of_n.count(el) % 2:
+        odd_num = el
+print(odd_num)
 
 """ Знайти анаграму. Перевірити чи слово має в собі такі самі літери як і попереднє слово.
     ANAGRAM | MGANRAA -> true
     EXIT | AXET -> false
     GOOD | DOGO -> true """
+word1 = 'EXIT'
+word2 = 'AXET'
+for el1 in word1:
+    for el2 in word2:
+        if el1 == el2:
+            word1 = word1.replace(el1, '_')
+            word2 = word2.replace(el2, '_')
+if word1 == word2:
+    print('true')
+else:
+    print('false')
 
 """ Точная степень двойки. Дано натуральное число N. Выведите слово YES, если число N является
     точной степенью двойки, или слово NO в противном случае. Операцией возведения в степень 
