@@ -81,6 +81,32 @@ print(sum_1(985736279))
     Выведите YES или NO. При решении этой задачи нельзя пользоваться циклами, в решениях на питоне нельзя
     использовать срезы с шагом, отличным от 1."""
 
+pal1 = 'niain'
+pal2 = 'tennet'
+pal3 = 'tenpopopopopopoppppppppnet'
+
+
+def palindromat(string: str, d=0):
+    if d < len(string)/2:
+        if string[d] != string[len(string) - 1 - d]:
+            d += 1
+            palindromat(string, d)
+            return 'False'
+        elif string[d] == string[len(string) - 1 - d]:
+            print(string[d])
+            print(string[len(string) - 1 - d])
+            d += 1
+            palindromat(string, d)
+            return 'True'
+
+    else:
+        return 'False'
+
+
+print(palindromat(pal1))
+print(palindromat(pal2))
+print(palindromat(pal3))
+
 """ Количество единиц
     Дана последовательность натуральных чисел в строке, завершающаяся двумя числами 0 подряд. Определите,
     сколько раз в этой последовательности встречается число 1. Числа, идущие после двух нулей, необходимо
@@ -122,4 +148,10 @@ print(flatter(list_of_lists))  # не знаю як зробити щоб не �
 """ Знайти найбільший елемент в масиві за допомогою reduce
     [1, 6, 9, 0, 17, 88, 4, 7] -> 88 """
 
+#  https://www.geeksforgeeks.org/reduce-in-python/
 
+import functools
+
+list_for_reduce = [1, 6, 9, 0, 17, 88, 4, 7]
+max_num = functools.reduce(lambda a, b: a if a > b else b, list_for_reduce)
+print(max_num)
