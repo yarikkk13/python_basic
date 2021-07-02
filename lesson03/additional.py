@@ -86,26 +86,18 @@ pal2 = 'tennet'
 pal3 = 'tenpopopopopopoppppppppnet'
 
 
-def palindromat(string: str, d=0):
-    if d < len(string)/2:
-        if string[d] != string[len(string) - 1 - d]:
-            d += 1
-            palindromat(string, d)
-            return 'False'
-        elif string[d] == string[len(string) - 1 - d]:
-            print(string[d])
-            print(string[len(string) - 1 - d])
-            d += 1
-            palindromat(string, d)
-            return 'True'
-
+def palindromat(string: str):
+    if len(string) < 2:
+        print('yes')
+    elif string[0] == string[len(string) - 1]:
+        palindromat(string[1:len(string) - 1])
     else:
-        return 'False'
+        print('no')
 
 
-print(palindromat(pal1))
-print(palindromat(pal2))
-print(palindromat(pal3))
+palindromat(pal1)
+palindromat(pal2)
+palindromat(pal3)
 
 """ Количество единиц
     Дана последовательность натуральных чисел в строке, завершающаяся двумя числами 0 подряд. Определите,
@@ -113,7 +105,7 @@ print(palindromat(pal3))
     игнорировать.
     2176491947586100 -> 3 """
 
-str_of_num = '21764910947586100322142'
+str_of_num = '217641119910947586100322142'
 length = len(str_of_num)
 new_str = []
 i = 0
@@ -134,6 +126,7 @@ print(new_str.count('1'))
 list_of_lists = [1, 3, ['Hello', 'World', [9, 6, 1]], ['oops'], 9]
 
 
+# l2: list = []
 def flatter(l: list, l2: list = []):
     for el in l:
         if type(el) != list:
@@ -143,7 +136,8 @@ def flatter(l: list, l2: list = []):
     return l2
 
 
-print(flatter(list_of_lists))  # не знаю як зробити щоб не створювати глобальну змінну
+print(flatter(list_of_lists))
+# не знаю як зробити щоб не створювати глобальну змінну або передавати її в самій функції дефолтним значенням
 
 """ Знайти найбільший елемент в масиві за допомогою reduce
     [1, 6, 9, 0, 17, 88, 4, 7] -> 88 """
