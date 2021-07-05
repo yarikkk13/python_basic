@@ -1,5 +1,5 @@
 #####################################
-# try exept
+# try except
 #####################################
 
 # try:
@@ -96,13 +96,13 @@ import uuid
 
 # print(uuid.uuid1())
 
-def gen_jpg_file():
-    pattern = '{}.jpg'
-    while True:
-        yield pattern.format(uuid.uuid1())
-
-
-file_gen = gen_jpg_file()
+# def gen_jpg_file():
+#     pattern = '{}.jpg'
+#     while True:
+#         yield pattern.format(uuid.uuid1())
+#
+#
+# file_gen = gen_jpg_file()
 
 #####################################
 # files
@@ -124,6 +124,7 @@ file_gen = gen_jpg_file()
 # file.seek(0)
 # print(file.read(), end='')
 # file.close()
+# file.flush()
 
 # with open('1.txt') as file:
 #     print(file.read())
@@ -142,13 +143,13 @@ file_gen = gen_jpg_file()
 ####################################################################################
 import pickle
 import json
-from typing import Dict, Any
-
-user: dict[str:Any] = {
-    "name": 'Max',
-    "age": 15,
-    "status": False
-}
+# from typing import Dict, Any
+#
+# user: dict[str:Any] = {
+#     "name": 'Max',
+#     "age": 15,
+#     "status": False
+# }
 # #
 #
 #
@@ -161,8 +162,8 @@ user: dict[str:Any] = {
 # print(user.get('name'))
 # with open('db.json', 'w') as file:
 #     json.dump(user, file)
-
-with open('db.json', 'r') as file:
-    user: dict[str:Any] = json.load(file)
-
-print(user)
+#
+# with open('db.json', 'r') as file:
+#     user: dict[str:Any] = json.load(file)
+#
+# print(user)
