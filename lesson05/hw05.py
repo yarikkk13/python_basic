@@ -104,6 +104,8 @@ while option != '9':
                    '5 Search by name of purchase\n'
                    '9 exit\n')
     if option == '1':
+        with open('notepad.json', 'r') as file:
+            list_of_letters = json.load(file)
         exact_name = input('enter the name of purchase\n')
         exact_price = input('enter the price of purchase\n')
         Notepad(exact_name, int(exact_price)).push_method()
