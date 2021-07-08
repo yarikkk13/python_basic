@@ -1,25 +1,9 @@
-# Переделываем практическую:
-#
-# -Должен быть класс записной книжки
-# -А каждая манипуляция над ней должна быть методом класса
-# -Все данные сохраняем в файл
-#
-#
-# реализовать записную книжку покупок:
-# - каждая запись должна содержать название покупки и ее цену
-# -сделать менюшку для работы с записной книжкой:
-#     '1) Создать запись'
-#     '2) Список все записей'
-#     '3) Общая сумма всех покупок'
-#     '4) Самая дорогая покупка'
-#     '5) Поиск по названию покупки'
-#     '9) Выход'
-# - можете придумать свои пункты
-
-import json
+# file_path = 'notepad.txt'
+# file = open(file_path)
+# print(file.read())
+# file.close()
 
 list_of_letters = []
-
 
 class Notepad:
 
@@ -99,7 +83,7 @@ option = str()
 while option != '9':
     option = input('1 Create note\n'
                    '2 List of all notes\n'
-                   '3 Sum of all 9purchases\n'
+                   '3 Sum of all purchases\n'
                    '4 The most expensive purchase\n'
                    '5 Search by name of purchase\n'
                    '9 exit\n')
@@ -107,23 +91,13 @@ while option != '9':
         exact_name = input('enter the name of purchase\n')
         exact_price = input('enter the price of purchase\n')
         Notepad(exact_name, int(exact_price)).push_method()
-        with open('notepad.json', 'w') as file:
-            json.dump(list_of_letters, file)
     elif option == '2':
-        with open('notepad.json', 'r') as file:
-            list_of_letters = json.load(file)
         print(Notepad.show_the_list())
     elif option == '3':
-        with open('notepad.json', 'r') as file:
-            list_of_letters = json.load(file)
         print(Notepad.find_sum())
     elif option == '4':
-        with open('notepad.json', 'r') as file:
-            list_of_letters = json.load(file)
         print(Notepad.find_max())
     elif option == '5':
-        with open('notepad.json', 'r') as file:
-            list_of_letters = json.load(file)
         exact_word = input('for correct searching enter the exact name of purchase: ')
         print(Notepad.find_purchase(exact_word))
     elif option == '9':
